@@ -1,396 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Crypto Wallet Help Center</title>
+<title>BitsRecover – Professional Crypto Wallet Recovery</title>
+
+<meta name="description"
+content="Lost access to Bitcoin, Ethereum or other cryptocurrencies? Our expert recovery team helps you regain your funds safely.">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
-body{
-font-family:'Poppins',sans-serif;
-background:#0a0e1f;
-color:white;
+html{
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#f59e0b;
+}
+
+.gradient-btn{
+background:linear-gradient(135deg,#fbbf24,#f97316);
 }
 
 </style>
 
 </head>
 
-<body>
 
-<!-- POPUP -->
+<body class="bg-gray-50 font-sans">
 
-<div id="helpcenter-popup" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50 p-4">
+<!-- TOP BAR -->
 
-<div class="bg-[#161b2b] rounded-xl p-8 max-w-lg w-full relative">
+<div class="bg-yellow-400 text-center py-2 text-sm font-semibold">
 
-<button onclick="closePopup()" class="absolute right-4 top-4 text-white text-xl">
-✕
-</button>
-
-<h2 class="text-2xl font-bold text-center mb-3">
-Crypto Wallet Support
-</h2>
-
-<p class="text-center text-white/70 mb-6">
-Submit your request and our blockchain experts will contact you shortly.
-</p>
-
-
-<form action="https://formspree.io/f/xpqypnwb" method="POST" class="space-y-4">
-
-<div>
-
-<label class="text-sm text-white/80">Full Name</label>
-
-<input type="text" name="name" required placeholder="Enter your name"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10 focus:ring-2 focus:ring-purple-400 outline-none">
+<a href="/contact-us.html" class="hover:underline">
+Start Your Recovery Process →
+</a>
 
 </div>
 
-
-<div>
-
-<label class="text-sm text-white/80">Email Address</label>
-
-<input type="email" name="email" required placeholder="Enter your email"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10 focus:ring-2 focus:ring-purple-400 outline-none">
-
-</div>
-
-
-<div>
-
-<label class="text-sm text-white/80">Phone Number</label>
-
-<input type="tel" name="phone" placeholder="Optional"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10 focus:ring-2 focus:ring-purple-400 outline-none">
-
-</div>
-
-
-<div>
-
-<label class="text-sm text-white/80">Issue Type</label>
-
-<select name="issue"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10 focus:ring-2 focus:ring-purple-400 outline-none">
-
-<option>Wallet Recovery</option>
-
-<option>Transaction Issue</option>
-
-<option>Account Access</option>
-
-<option>Other Crypto Issue</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label class="text-sm text-white/80">Message</label>
-
-<textarea name="message" rows="3" placeholder="Describe your issue"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10 focus:ring-2 focus:ring-purple-400 outline-none"></textarea>
-
-</div>
-
-
-<button type="submit"
-
-class="w-full py-3 bg-purple-600 rounded-lg font-semibold hover:bg-purple-500 transition">
-
-Submit Request
-
-</button>
-
-
-</form>
-
-</div>
-
-</div>
 
 
 <!-- HEADER -->
 
-<header class="bg-gradient-to-r from-purple-700 to-indigo-700 py-16 px-6 text-center">
+<header class="bg-white shadow sticky top-0 z-50">
 
-<h1 class="text-4xl font-bold mb-3">
+<div class="max-w-7xl mx-auto px-4">
 
-Crypto Wallet Recovery & Support
+<div class="flex justify-between items-center py-4">
 
-</h1>
+<!-- Logo -->
 
-<p class="text-white/80 max-w-2xl mx-auto">
+<a href="/" class="flex items-center">
 
-Lost wallet access? Transaction stuck? Need help with cryptocurrency wallet issues? Our experts provide assistance for Bitcoin, Ethereum and other digital assets.
+<img src="https://bitsrecover.com/logo.png" class="h-12">
 
-</p>
+</a>
 
-<button onclick="showPopup()"
 
-class="mt-6 bg-pink-500 px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+<!-- Desktop Nav -->
 
-Get Support Now
+<nav class="hidden md:flex space-x-8 items-center">
+
+<a href="/services.html" class="text-gray-700 hover:text-yellow-500">Services</a>
+
+<a href="whychooseus.html" class="text-gray-700 hover:text-yellow-500">Why Choose Us</a>
+
+<a href="testimonials.html" class="text-gray-700 hover:text-yellow-500">Testimonials</a>
+
+<a href="/blog.html" class="text-gray-700 hover:text-yellow-500">Blog</a>
+
+<a href="/contact-us.html"
+class="gradient-btn text-white px-6 py-2 rounded-full font-semibold hover:brightness-110">
+Get Started
+</a>
+
+</nav>
+
+
+<!-- Mobile Button -->
+
+<button id="menuBtn" class="md:hidden">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+class="h-8 w-8"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor">
+
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="2"
+d="M4 6h16M4 12h16M4 18h16"/>
+
+</svg>
 
 </button>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="hidden md:hidden pb-6">
+
+<a href="/services.html" class="block py-2">Services</a>
+
+<a href="#why-us" class="block py-2">Why Choose Us</a>
+
+<a href="#testimonials" class="block py-2">Testimonials</a>
+
+<a href="/blog.html.html" class="block py-2">Blog</a>
+
+<a href="/contact-us.html"
+class="block mt-2 bg-yellow-500 text-white px-5 py-2 rounded-full text-center">
+Get Started
+</a>
+
+</div>
+
+</div>
 
 </header>
 
 
+
+<!-- HERO -->
+
+<section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24">
+
+<div class="max-w-7xl mx-auto px-4 text-center">
+
+<h1 class="text-4xl md:text-6xl font-bold mb-6">
+
+Lost Access To Your Crypto?
+
+<span class="text-yellow-400">
+We Can Recover It
+</span>
+
+</h1>
+
+
+<p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+
+Recover lost Bitcoin, Ethereum, Dogecoin, XRP, damaged wallets,
+forgotten passwords and more with our expert crypto recovery specialists.
+
+</p>
+
+
+<a href="/contact-us.html"
+class="gradient-btn px-10 py-5 text-xl rounded-full font-bold hover:brightness-110">
+
+Start Recovery Now →
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="py-16 bg-white">
+
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+<div>
+<div class="text-5xl mb-4 text-yellow-500">$</div>
+<h3 class="font-bold">Lowest Fees</h3>
+</div>
+
+<div>
+<div class="text-5xl mb-4 text-yellow-500">⚡</div>
+<h3 class="font-bold">Fast Recovery</h3>
+</div>
+
+<div>
+<div class="text-5xl mb-4 text-yellow-500">🔐</div>
+<h3 class="font-bold">Secure Process</h3>
+</div>
+
+<div>
+<div class="text-5xl mb-4 text-yellow-500">₿</div>
+<h3 class="font-bold">All Cryptos Supported</h3>
+</div>
+
+</div>
+
+</section>
+
+
+
 <!-- SERVICES -->
 
-<section class="max-w-6xl mx-auto px-6 py-16">
+<section id="services" class="py-20 bg-gray-100">
 
-<h2 class="text-center text-3xl font-bold mb-12">
+<div class="max-w-7xl mx-auto px-4">
 
-Crypto Support Services
+<h2 class="text-4xl font-bold text-center mb-12">
+
+Crypto Recovery Services
 
 </h2>
 
-<div class="grid md:grid-cols-3 gap-6">
+
+<div class="grid md:grid-cols-3 gap-10">
 
 
-<div class="bg-[#161b2b] p-6 rounded-lg">
+<div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
 
-<h3 class="font-semibold mb-2">Wallet Recovery</h3>
+<h3 class="text-xl font-bold mb-3">Lost Password Recovery</h3>
 
-<p class="text-white/70 text-sm">
+<p class="text-gray-600">
 
-Assistance with recovering lost wallet access, forgotten passwords and hardware wallet issues.
-
-</p>
-
-</div>
-
-
-<div class="bg-[#161b2b] p-6 rounded-lg">
-
-<h3 class="font-semibold mb-2">Transaction Support</h3>
-
-<p class="text-white/70 text-sm">
-
-Help with pending or stuck cryptocurrency transactions and blockchain confirmations.
+Recover forgotten wallet passwords and encrypted wallet files.
 
 </p>
 
 </div>
 
 
-<div class="bg-[#161b2b] p-6 rounded-lg">
 
-<h3 class="font-semibold mb-2">Account Issues</h3>
+<div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
 
-<p class="text-white/70 text-sm">
+<h3 class="text-xl font-bold mb-3">Exchange Recovery</h3>
 
-Resolve wallet login issues, synchronization problems and configuration errors.
+<p class="text-gray-600">
+
+Recover funds stuck on exchanges or locked accounts.
 
 </p>
 
 </div>
 
+
+
+<div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
+
+<h3 class="text-xl font-bold mb-3">Hardware Wallet Recovery</h3>
+
+<p class="text-gray-600">
+
+Ledger, Trezor and other hardware wallet recovery.
+
+</p>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- PROBLEMS -->
 
-<section class="max-w-6xl mx-auto px-6 py-16">
+<!-- WHY US -->
 
-<h2 class="text-center text-3xl font-bold mb-10">
+<section id="why-us" class="py-20 bg-white">
 
-Common Crypto Problems
+<div class="max-w-7xl mx-auto px-4">
+
+<h2 class="text-4xl font-bold text-center mb-16">
+
+Why Choose BitsRecover
 
 </h2>
 
-<div class="grid md:grid-cols-2 gap-6">
+
+<div class="grid md:grid-cols-3 gap-10 text-center">
 
 
-<div class="bg-[#161b2b] p-6 rounded-lg">
+<div>
 
-<h3 class="font-semibold mb-2">Lost Wallet Access</h3>
+<div class="text-6xl mb-6">👨‍💻</div>
 
-<p class="text-white/70 text-sm">
+<h3 class="font-bold text-xl mb-3">
 
-Forgot wallet password or lost device access? Our team helps restore access safely.
+Professional Experts
 
-</p>
+</h3>
 
-</div>
+<p class="text-gray-600">
 
-
-<div class="bg-[#161b2b] p-6 rounded-lg">
-
-<h3 class="font-semibold mb-2">Stuck Transactions</h3>
-
-<p class="text-white/70 text-sm">
-
-If your cryptocurrency transaction is pending for a long time, we can help analyze and resolve the issue.
+Experienced blockchain engineers with years of recovery experience.
 
 </p>
 
 </div>
 
 
-<div class="bg-[#161b2b] p-6 rounded-lg">
+<div>
 
-<h3 class="font-semibold mb-2">Seed Phrase Issues</h3>
+<div class="text-6xl mb-6">💰</div>
 
-<p class="text-white/70 text-sm">
+<h3 class="font-bold text-xl mb-3">
 
-Problems with wallet recovery phrases or backup configurations.
+No Recovery No Fee
+
+</h3>
+
+<p class="text-gray-600">
+
+You only pay when we successfully recover your funds.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="text-6xl mb-6">⚡</div>
+
+<h3 class="font-bold text-xl mb-3">
+
+Fast Turnaround
+
+</h3>
+
+<p class="text-gray-600">
+
+Many cases resolved within 24-72 hours.
 
 </p>
 
 </div>
 
 
-<div class="bg-[#161b2b] p-6 rounded-lg">
-
-<h3 class="font-semibold mb-2">Wallet Errors</h3>
-
-<p class="text-white/70 text-sm">
-
-Technical issues with wallet software, synchronization or blockchain connectivity.
-
-</p>
-
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- CONTACT SECTION -->
 
-<section class="max-w-3xl mx-auto px-6 py-16">
+<!-- TESTIMONIALS -->
 
-<div class="bg-[#161b2b] p-8 rounded-lg">
+<section id="testimonials" class="py-20 bg-gray-50">
 
-<h2 class="text-2xl font-bold text-center mb-4">
+<div class="max-w-7xl mx-auto px-4">
 
-Submit Support Request
+<h2 class="text-4xl font-bold text-center mb-12">
+
+Client Testimonials
 
 </h2>
 
-<p class="text-white/70 text-center mb-6">
 
-Fill out the form below and our support team will review your request.
+<div class="grid md:grid-cols-3 gap-8">
+
+
+<div class="bg-white p-6 rounded-xl shadow">
+
+<p>
+
+"They helped recover my Bitcoin wallet after I forgot the password."
 
 </p>
 
+<p class="font-bold mt-4">Michael R.</p>
 
-<form action="https://formspree.io/f/xpqypnwb" method="POST" class="space-y-4">
-
-
-<input type="text" name="name" required placeholder="Full Name"
-
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10">
+</div>
 
 
 
-<input type="email" name="email" required placeholder="Email Address"
+<div class="bg-white p-6 rounded-xl shadow">
 
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10">
+<p>
+
+"Professional team and fast service. Highly recommended."
+
+</p>
+
+<p class="font-bold mt-4">David P.</p>
+
+</div>
 
 
 
-<textarea name="message" rows="4" placeholder="Describe your issue"
+<div class="bg-white p-6 rounded-xl shadow">
 
-class="w-full px-3 py-2 rounded bg-[#0a0e1f] border border-white/10"></textarea>
+<p>
 
+"They recovered my ETH wallet after months of being locked out."
 
-<button type="submit"
+</p>
 
-class="w-full py-3 bg-purple-600 rounded-lg font-semibold">
+<p class="font-bold mt-4">Sarah L.</p>
 
-Send Request
+</div>
 
-</button>
-
-</form>
+</div>
 
 </div>
 
 </section>
+
+
+
+<!-- CTA -->
+
+<section class="bg-gradient-to-br from-yellow-500 to-orange-600 text-white py-20 text-center">
+
+<h2 class="text-4xl font-bold mb-6">
+
+Start Your Crypto Recovery Today
+
+</h2>
+
+<a href="/contact-us.html"
+class="bg-white text-orange-600 px-10 py-5 text-xl font-bold rounded-full">
+
+Contact Our Experts →
+
+</a>
+
+</section>
+
 
 
 <!-- FOOTER -->
 
-<footer class="text-center text-white/50 text-sm py-6 border-t border-white/10">
+<footer class="bg-gray-900 text-gray-300 py-16">
 
-© 2025 Crypto Wallet Support Services
+<div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
+
+
+<div>
+
+<img src="https://bitsrecover.com/logo.png" class="h-12 mb-4">
+
+<p>Professional Crypto Wallet Recovery Service</p>
+
+</div>
+
+
+
+<div>
+
+<h4 class="text-white font-bold mb-4">Company</h4>
+
+<ul class="space-y-2">
+
+<li><a href="/about-us">About</a></li>
+
+<li><a href="/blog.html">Blog</a></li>
+
+<li><a href="/contact-us.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+
+<div>
+
+<h4 class="text-white font-bold mb-4">Legal</h4>
+
+<ul class="space-y-2">
+
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+
+<li><a href="/terms">Terms</a></li>
+
+<li><a href="/disclaimer">Disclaimer</a></li>
+
+</ul>
+
+</div>
+
+
+
+<div>
+
+<h4 class="text-white font-bold mb-4">Wallets</h4>
+
+<ul class="space-y-2">
+
+<li>MetaMask</li>
+<li>Ledger</li>
+<li>Trezor</li>
+<li>Electrum</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+<div class="text-center mt-10 border-t border-gray-700 pt-6 text-sm">
+
+© 2026 BitsRecover. All rights reserved.
+
+</div>
 
 </footer>
 
 
+
 <script>
 
+const btn=document.getElementById("menuBtn")
+const menu=document.getElementById("mobileMenu")
 
-function showPopup(){
-
-document.getElementById("helpcenter-popup").classList.remove("hidden")
-
+btn.onclick=()=>{
+menu.classList.toggle("hidden")
 }
-
-
-function closePopup(){
-
-document.getElementById("helpcenter-popup").classList.add("hidden")
-
-}
-
-
-// auto popup
-
-window.onload=function(){
-
-setTimeout(function(){
-
-showPopup()
-
-},1500)
-
-}
-
-
-// open popup on click anywhere
-
-document.addEventListener("click",function(e){
-
-if(!e.target.closest("#helpcenter-popup")){
-
-showPopup()
-
-}
-
-})
-
 
 </script>
 
 
 </body>
-
 </html>
